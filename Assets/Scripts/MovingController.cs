@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovingController : MonoBehaviour
 {
-    public static void LookDirection(Transform transform, Vector3 dir)
+    public static void LookDirection(Transform transform, Vector3 dir)  // 이동방향 바라봄
     {
         transform.rotation = Quaternion.LookRotation(dir.x * Vector3.right + dir.z * Vector3.forward);
     }
@@ -15,7 +15,7 @@ public class MovingController : MonoBehaviour
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(-dir), speed * Time.fixedDeltaTime);
     }
 
-    public static void RigidMovePos(Transform transform, Vector3 dir, float speed)
+    public static void RigidMovePos(Transform transform, Vector3 dir, float speed)  // rigid 이동
     {
         transform.gameObject.GetComponent<Rigidbody>().MovePosition(transform.position + new Vector3(dir.x, 0, dir.z).normalized * speed * Time.fixedDeltaTime);
     }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Cinemachine;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -52,18 +53,17 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
             Debug.LogError("The Joystick is not placed inside a canvas");
 
         Vector2 center = new Vector2(0.5f, 0.5f);
-        //background.pivot = center;
+        background.pivot = center;
         handle.anchorMin = center;
         handle.anchorMax = center;
         handle.pivot = center;
         handle.anchoredPosition = Vector2.zero;
     }
-
     public virtual void OnPointerDown(PointerEventData eventData)
     {
+        CanvasManager.instance.cinemachineInputProvider.enabled = false;
         OnDrag(eventData);
     }
-
     public void OnDrag(PointerEventData eventData)
     {
         cam = null;
@@ -134,6 +134,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
 
     public virtual void OnPointerUp(PointerEventData eventData)
     {
+        CanvasManager.instance.cinemachineInputProvider.enabled = true;
         isMoving = false;
         input = Vector2.zero;
         handle.anchoredPosition = Vector2.zero;

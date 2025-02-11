@@ -17,9 +17,9 @@
                 {
                     "name": "Look",
                     "type": "Value",
-                    "id": "c7a44d2a-788e-4aae-8433-ac41aa74fb31",
+                    "id": "a024a169-0ee7-4cca-85b4-2b8b27a9828f",
                     "expectedControlType": "Vector2",
-                    "processors": "",
+                    "processors": "NormalizeVector2",
                     "interactions": "",
                     "initialStateCheck": true
                 },
@@ -27,7 +27,7 @@
                     "name": "Fire",
                     "type": "Button",
                     "id": "8d1c67c5-f382-4007-8374-301acb3b46bb",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -168,10 +168,10 @@
                 },
                 {
                     "name": "",
-                    "id": "c1f7a91b-d0fd-4a62-997e-7fb9b69bf235",
+                    "id": "6dcd121d-26d9-4d56-81fc-c455a5881fdb",
                     "path": "<Gamepad>/rightStick",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "NormalizeVector2",
                     "groups": ";Gamepad",
                     "action": "Look",
                     "isComposite": false,
@@ -179,7 +179,7 @@
                 },
                 {
                     "name": "",
-                    "id": "8c8e490b-c610-4785-884f-f04217b23ca4",
+                    "id": "39d5cd89-8efa-4209-993d-ace901093d13",
                     "path": "<Pointer>/delta",
                     "interactions": "",
                     "processors": "",
@@ -190,7 +190,7 @@
                 },
                 {
                     "name": "",
-                    "id": "3e5f5442-8668-4b27-a940-df99bad7e831",
+                    "id": "5a461619-e202-4ada-81b4-c35f4695957d",
                     "path": "<Joystick>/{Hatswitch}",
                     "interactions": "",
                     "processors": "",
@@ -251,6 +251,56 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Camera",
+            "id": "5ff509aa-c602-49eb-b5a4-855f740785fe",
+            "actions": [
+                {
+                    "name": "Look",
+                    "type": "Value",
+                    "id": "35b3a096-0553-4715-bc29-ec0e79dbe4ce",
+                    "expectedControlType": "Vector2",
+                    "processors": "NormalizeVector2",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "1421b6e3-e684-478b-80c8-f7ebc2b68dcc",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "NormalizeVector2",
+                    "groups": ";Gamepad",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "08a68a48-5bc3-4aba-8522-7ce824331e7d",
+                    "path": "<Pointer>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse;Touch",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b5a242ae-ef62-4b56-bb24-93310b1ce333",
+                    "path": "<Joystick>/{Hatswitch}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Joystick",
+                    "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

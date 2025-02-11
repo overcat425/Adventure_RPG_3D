@@ -15,6 +15,11 @@ public class CharacterBase : MonoBehaviour
     public int baseDamage;      // 최소 데미지
     public float damage { get => Random.Range(baseDamage, baseDamage + 5); }
     public bool isDie { get => currentHealth <= 0; }
+    protected virtual void Awake()
+    {
+        anim = GetComponent<Animator>();
+        rigid = GetComponent<Rigidbody>();
+    }
     protected virtual void OnEnable()
     {
         currentHealth = maxHealth;
