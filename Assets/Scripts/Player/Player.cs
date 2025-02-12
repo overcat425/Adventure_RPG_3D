@@ -11,6 +11,7 @@ public class Player : CharacterBase
     public bool isJump;
     public bool attackBtnPressed;
     private Joystick joystick;
+    public Collider coll;
     protected override void Awake()
     {
         base.Awake();
@@ -28,7 +29,7 @@ public class Player : CharacterBase
         }
             //moveDir = new Vector3(joystick.Horizontal, 0, joystick.Vertical);
     }
-    public void PlayerJump()
+    public void OnClickJump()
     {
         if (isJump) return;
         rigid.AddForce(Vector3.up * 50, ForceMode.Impulse);
@@ -37,6 +38,7 @@ public class Player : CharacterBase
     }
     public void OnClickAttack(bool isPressed)
     {
+        coll.enabled = true;
         attackBtnPressed = isPressed;
     }
     private void OnCollisionEnter(Collision collision)

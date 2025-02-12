@@ -2,22 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
-{
+public class GameManager : SingletonScript<GameManager> {
     public static GameManager instance;
     public CameraController cameraController;
+    public Player player;
     public PlayerState playerState;
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else if (instance != this)
-        {
-            Destroy(instance.gameObject);
-        }
-    }
     void Start()
     {
         

@@ -4,13 +4,12 @@ using UnityEngine;
 
 public abstract class Npc : MonoBehaviour
 {
-    private NpcScript npcScript;
+    public NpcScript npcScript;
     protected Transform trans;
 
     public string npcName;
     public Sprite npcSprite;
     public SpriteRenderer takingBubble;
-
     public virtual void ShowNpcTalking()
     {
         npcScript.npcUi.SetActive(true);

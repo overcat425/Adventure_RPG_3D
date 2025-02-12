@@ -10,10 +10,6 @@ public class NpcScript : MonoBehaviour
     public Image npcImg;
     public Text npcName;
     public GameObject talkingBtn;
-    void Start()
-    {
-        
-    }
     private void OnTriggerEnter(Collider other)
     {
         talkingBtn.SetActive(true);
@@ -26,9 +22,5 @@ public class NpcScript : MonoBehaviour
     {
         talkingBtn.SetActive(false);
         npc.ShowNpcTalking();
-    }
-    public void ShowNpcUi()
-    {
-        
     }
 }

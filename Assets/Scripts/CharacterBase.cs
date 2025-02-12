@@ -6,7 +6,7 @@ public class CharacterBase : MonoBehaviour
 {
     public Rigidbody rigid { get; set; }
     public Animator anim { get; set; }
-    protected HpBar hpBar;
+    protected HealthScript healthScript;
     protected RaycastHit raycastHit;
     public float maxHealth;
     public float currentHealth;
