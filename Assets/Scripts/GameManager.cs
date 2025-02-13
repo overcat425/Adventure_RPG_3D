@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : SingletonScript<GameManager> {
+public class GameManager : MonoBehaviour
+{
     public static GameManager instance;
     public CameraController cameraController;
     public Player player;

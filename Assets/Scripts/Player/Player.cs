@@ -19,15 +19,18 @@ public class Player : CharacterBase
     }
     private void FixedUpdate()
     {
-        if(GetComponent<CharacterState>().state != StateFSM.BaseAttack && joystick.isMoving)
+        OnMove();
+    }
+    void OnMove()
+    {
+        if (GetComponent<CharacterState>().state != StateFSM.BaseAttack && joystick.isMoving)
         {
             Vector3 forward = Camera.main.transform.forward;
             Vector3 right = Camera.main.transform.right;
-            forward.y = 0f;     forward.Normalize();
-            right.y = 0f;       right.Normalize();
+            forward.y = 0f; forward.Normalize();
+            right.y = 0f; right.Normalize();
             moveDir = right * joystick.Horizontal + forward * joystick.Vertical;
         }
-            //moveDir = new Vector3(joystick.Horizontal, 0, joystick.Vertical);
     }
     public void OnClickJump()
     {
