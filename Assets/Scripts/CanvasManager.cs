@@ -8,15 +8,9 @@ public class CanvasManager : MonoBehaviour
     public static CanvasManager instance;
     public CinemachineInputProvider cinemachineInputProvider;
     public Joystick joystick;
+    public Canvas canvas;
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else if (instance != this)
-        {
-            Destroy(instance.gameObject);
-        }
+        instance = this;
     }
 }
